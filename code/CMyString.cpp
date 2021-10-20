@@ -1,5 +1,3 @@
-#pragma warning(disable:4996) // visual studio 에서 필요
-
 #include "CMyString.h"
 #include <cstring>
 #include <iostream>
@@ -45,4 +43,12 @@ void CMyString::Release(){
     this->m_nLength=0;
     delete[] m_pszData;
     m_pszData=nullptr;
+}
+
+CMyString::CMyString(const char* str){
+    SetString(str);
+}
+
+CMyString::operator char *() const{
+return m_pszData;
 }

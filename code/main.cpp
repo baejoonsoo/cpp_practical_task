@@ -1,24 +1,16 @@
 #include <iostream>
-#include "CMyString.h"  // CMyString 클래스 사용을 위해 헤더파일 추가
+#include "CMyString.h"
 using namespace std;
 
-void TestFunc(const CMyString& param)
+void TestFunc(const CMyString& strParam)
 {
-    cout << param.GetString() << endl;
+	cout<< strParam<< endl;
 }
 
 int main()
 {
-    CMyString strData, strTest;
-	strData.SetString("Hello");
-	strTest.SetString("World");
-
-	// 복사 생성
-	CMyString strNewData(strData);
-	cout << strNewData.GetString() << endl;
-
-	// 단순 대입 연산자 호출
-	strNewData = strTest;
-	cout << strNewData.GetString() << endl;
+	CMyString strData("홍길동");
+	::TestFunc(strData);
+	::TestFunc(CMyString("김철수"));
 	return 0;
 }
