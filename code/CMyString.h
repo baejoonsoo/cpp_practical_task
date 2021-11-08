@@ -19,6 +19,7 @@ private:
 public:  // my method
 	int SetString(const char* pszParam);
 	const char* GetString() const;
+		CMyString(CMyString&& rhs); // 이동 생성자
 	void Release();
 };
 

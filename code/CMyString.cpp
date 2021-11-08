@@ -52,3 +52,15 @@ CMyString::CMyString(const char* str){
 CMyString::operator char *() const{
 return m_pszData;
 }
+
+CMyString::CMyString(CMyString&& rhs){
+	cout<<"CMyString 이동생성자 호출"<<endl;
+
+    // 얕은 복사 실행
+    this->m_nLength=rhs.m_nLength;
+    this->m_pszData=rhs.m_pszData;
+
+    // 원본 임시 객체를 초기화 // 해제X
+    rhs.m_pszData=nullptr;
+    rhs.m_nLength=0;
+}

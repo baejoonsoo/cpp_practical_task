@@ -2,15 +2,13 @@
 #include "CMyString.h"
 using namespace std;
 
-void TestFunc(const CMyString& strParam)
-{
-	cout<< strParam<< endl;
+CMyString TestFunc(){
+	CMyString strTest("TestFunc() return");
+	cout << strTest << endl;
+	return strTest;
 }
-
-int main()
-{
-	CMyString strData("홍길동");
-	::TestFunc(strData);
-	::TestFunc(CMyString("김철수"));
+int main(){
+	// 이름없는 임시 객체가 만들어진다.
+	TestFunc();
 	return 0;
 }
