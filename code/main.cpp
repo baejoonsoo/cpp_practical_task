@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	CMyString strLeft("학번 : 0000"), strRight(", 이름 : 가나다"), strResult; 
+	CMyString strLeft("학번 : 1210"), strRight(", 이름 : 배준수"), strResult; 
   // 학번과 이름은 본인 것으로 수정
 
 	strResult = strLeft + strRight;
